@@ -38,17 +38,8 @@ class WanOptimizer(wan_optimizer.BaseWanOptimizer):
 
 
     def receive(self, packet):
-        """ Handles receiving a packet.
-
-        Right now, this function simply forwards packets to clients (if a packet
-        is destined to one of the directly connected clients), or otherwise sends
-        packets across the WAN. You should change this function to implement the
-        functionality described in part 2.  You are welcome to implement private
-        helper fuctions that you call here. You should *not* be calling any functions
-        or directly accessing any variables in the other middlebox on the other side of 
-        the WAN; this WAN optimizer should operate based only on its own local state
-        and packets that have been received.
-        """
+        #Handles receiving a packet.
+       
         if packet.dest in self.address_to_port:
             # The packet is destined to one of the clients connected to this middlebox;
             # send the packet there.
